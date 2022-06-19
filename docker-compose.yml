@@ -1,0 +1,14 @@
+version: '3.1'
+services:
+  end:
+    container_name: 'toy-deploy-end'
+    build: './toy-deploy-end'
+    ports:
+      - '7001:7001'
+  front:
+    container_name: 'toy-deploy-front'
+    depends_on:
+      - end
+    build: './toy-deploy-front'
+    ports:
+      - '3000:3000'
