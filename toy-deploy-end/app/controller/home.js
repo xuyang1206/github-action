@@ -8,9 +8,19 @@ class HomeController extends Controller {
     ctx.body = 'hi, egg'
   }
 
-  async count() {
+  async addCount() {
+    await this.ctx.model.Pv.create({})
     this.ctx.body = {
-      count: 100,
+      err_code: 0,
+      err_msg: 'success',
+    }
+  }
+
+  async getCount() {
+    this.ctx.body = {
+      err_code: 0,
+      err_msg: 'success',
+      err_data: await this.ctx.model.Pv.count(),
     }
   }
 }

@@ -31,6 +31,24 @@ module.exports = (appInfo) => {
     allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS',
   }
 
+  config.sequelize = {
+    dialect: 'mysql',
+    database: 'toy-deploy',
+    host: '127.0.0.1',
+    username: 'root',
+    password: '123456',
+    port: 33306,
+    timezone: '+08:00',
+    define: {
+      freezeTableName: true,
+      timestamps: true,
+      paranoid: true,
+      createdAt: 'created_at',
+      updatedAt: 'updated_at',
+      deletedAt: 'deleted_at',
+    },
+  }
+
   // add your user config here
   const userConfig = {
     // myAppName: 'egg',

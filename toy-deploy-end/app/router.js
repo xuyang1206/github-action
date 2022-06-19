@@ -6,5 +6,6 @@
 module.exports = (app) => {
   const { router, controller } = app
   router.get('/', controller.home.index)
-  router.get('/count', controller.home.count)
+  router.get('/getCount', controller.home.getCount)
+  router.get('/addCount', controller.home.addCount)
 }
